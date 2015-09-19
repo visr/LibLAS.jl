@@ -1,12 +1,14 @@
 language: julia
 os:
   - linux
-  - osx
 julia:
-  - release
+  - 0.4
   - nightly
 notifications:
   email: false
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y liblas-bin
 # uncomment the following lines to override the default test script
 #script:
 #  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
