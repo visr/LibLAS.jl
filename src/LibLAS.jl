@@ -1,3 +1,5 @@
+__precompile__()
+
 module LibLAS
 
 import Base: copy, reset, print, isvalid, seek, convert, scale!
