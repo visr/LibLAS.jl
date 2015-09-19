@@ -35,24 +35,24 @@ typealias LASSchema Ptr{LASSchemaS}
 
 
 # begin enum LASError
-typealias LASError @compat UInt32
-const LE_None = @compat UInt32(0)
-const LE_Debug = @compat UInt32(1)
-const LE_Warning = @compat UInt32(2)
-const LE_Failure = @compat UInt32(3)
-const LE_Fatal = @compat UInt32(4)
+typealias LASError UInt32
+const LE_None = UInt32(0)
+const LE_Debug = UInt32(1)
+const LE_Warning = UInt32(2)
+const LE_Failure = UInt32(3)
+const LE_Fatal = UInt32(4)
 # end enum LASError
 
 
 # LAS
 
 function liblas_version()
-    version = ccall((:LAS_GetVersion,liblas),Ptr{Uint8},())
+    version = ccall((:LAS_GetVersion,liblas),Ptr{UInt8},())
     convert(VersionNumber, bytestring(version))
 end
 
 function liblas_fullversion()
-    version = ccall((:LAS_GetFullVersion,liblas),Ptr{Uint8},())
+    version = ccall((:LAS_GetFullVersion,liblas),Ptr{UInt8},())
     bytestring(version)
 end
 
@@ -70,18 +70,18 @@ end
 
 # LASString
 
-function lasstring_free(string::Ptr{Uint8})
-    ccall((:LASString_Free,liblas),Void,(Ptr{Uint8},),string)
+function lasstring_free(string::Ptr{UInt8})
+    ccall((:LASString_Free,liblas),Void,(Ptr{UInt8},),string)
 end
 
 # LASSchema
 
 function bytesize(hFormat::LASSchema)
-    ccall((:LASSchema_GetByteSize,liblas),Uint32,(LASSchema,),hFormat)
+    ccall((:LASSchema_GetByteSize,liblas),UInt32,(LASSchema,),hFormat)
 end
 
 function base_bytesize(hFormat::LASSchema)
-    ccall((:LASSchema_GetBaseByteSize,liblas),Uint32,(LASSchema,),hFormat)
+    ccall((:LASSchema_GetBaseByteSize,liblas),UInt32,(LASSchema,),hFormat)
 end
 
 function destroy(hFormat::LASSchema)

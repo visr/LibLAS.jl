@@ -1,5 +1,5 @@
-function create(::Type{LASWriter},filename::String,hHeader::LASHeader,mode::Cint)
-    ccall((:LASWriter_Create,liblas),LASWriter,(Ptr{Uint8},LASHeader,Cint),filename,hHeader,mode)
+function create(::Type{LASWriter},filename::AbstractString,hHeader::LASHeader,mode::Cint)
+    ccall((:LASWriter_Create,liblas),LASWriter,(Ptr{UInt8},LASHeader,Cint),filename,hHeader,mode)
 end
 
 function writepoint(hWriter::LASWriter,hPoint::LASPoint)

@@ -7,25 +7,25 @@ function destroy(hColor::LASColor)
 end
 
 function red(hColor::LASColor)
-    ccall((:LASColor_GetRed,liblas),Uint16,(LASColor,),hColor)
+    ccall((:LASColor_GetRed,liblas),UInt16,(LASColor,),hColor)
 end
 
-function red(hColor::LASColor,value::Uint16)
-    ccall((:LASColor_SetRed,liblas),LASError,(LASColor,Uint16),hColor,value)
+function red(hColor::LASColor,value::UInt16)
+    ccall((:LASColor_SetRed,liblas),LASError,(LASColor,UInt16),hColor,value)
 end
 
 function green(hColor::LASColor)
-    ccall((:LASColor_GetGreen,liblas),Uint16,(LASColor,),hColor)
+    ccall((:LASColor_GetGreen,liblas),UInt16,(LASColor,),hColor)
 end
 
-function green(hColor::LASColor,value::Uint16)
-    ccall((:LASColor_SetGreen,liblas),LASError,(LASColor,Uint16),hColor,value)
+function green(hColor::LASColor,value::UInt16)
+    ccall((:LASColor_SetGreen,liblas),LASError,(LASColor,UInt16),hColor,value)
 end
 
 function blue(hColor::LASColor)
-    ccall((:LASColor_GetBlue,liblas),Uint16,(LASColor,),hColor)
+    ccall((:LASColor_GetBlue,liblas),UInt16,(LASColor,),hColor)
 end
 
-function blue(hColor::LASColor,value::Uint16)
-    ccall((:LASColor_SetBlue,liblas),LASError,(LASColor,Uint16),hColor,value)
+function blue(hColor::LASColor,value::UInt16)
+    ccall((:LASColor_SetBlue,liblas),LASError,(LASColor,UInt16),hColor,value)
 end

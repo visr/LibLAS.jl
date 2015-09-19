@@ -51,43 +51,43 @@ function raw_zcoord!(hPoint::LASPoint,value::Clong)
 end
 
 function intensity(hPoint::LASPoint)
-    ccall((:LASPoint_GetIntensity,liblas),Uint16,(LASPoint,),hPoint)
+    ccall((:LASPoint_GetIntensity,liblas),UInt16,(LASPoint,),hPoint)
 end
 
-function intensity!(hPoint::LASPoint,value::Uint16)
-    ccall((:LASPoint_SetIntensity,liblas),LASError,(LASPoint,Uint16),hPoint,value)
+function intensity!(hPoint::LASPoint,value::UInt16)
+    ccall((:LASPoint_SetIntensity,liblas),LASError,(LASPoint,UInt16),hPoint,value)
 end
 
 function returnnumber(hPoint::LASPoint)
-    ccall((:LASPoint_GetReturnNumber,liblas),Uint16,(LASPoint,),hPoint)
+    ccall((:LASPoint_GetReturnNumber,liblas),UInt16,(LASPoint,),hPoint)
 end
 
-function returnnumber!(hPoint::LASPoint,value::Uint16)
-    ccall((:LASPoint_SetReturnNumber,liblas),LASError,(LASPoint,Uint16),hPoint,value)
+function returnnumber!(hPoint::LASPoint,value::UInt16)
+    ccall((:LASPoint_SetReturnNumber,liblas),LASError,(LASPoint,UInt16),hPoint,value)
 end
 
 function numberofreturns(hPoint::LASPoint)
-    ccall((:LASPoint_GetNumberOfReturns,liblas),Uint16,(LASPoint,),hPoint)
+    ccall((:LASPoint_GetNumberOfReturns,liblas),UInt16,(LASPoint,),hPoint)
 end
 
-function numberofreturns!(hPoint::LASPoint,value::Uint16)
-    ccall((:LASPoint_SetNumberOfReturns,liblas),LASError,(LASPoint,Uint16),hPoint,value)
+function numberofreturns!(hPoint::LASPoint,value::UInt16)
+    ccall((:LASPoint_SetNumberOfReturns,liblas),LASError,(LASPoint,UInt16),hPoint,value)
 end
 
 function scandirection(hPoint::LASPoint)
-    ccall((:LASPoint_GetScanDirection,liblas),Uint16,(LASPoint,),hPoint)
+    ccall((:LASPoint_GetScanDirection,liblas),UInt16,(LASPoint,),hPoint)
 end
 
-function scandirection!(hPoint::LASPoint,value::Uint16)
-    ccall((:LASPoint_SetScanDirection,liblas),LASError,(LASPoint,Uint16),hPoint,value)
+function scandirection!(hPoint::LASPoint,value::UInt16)
+    ccall((:LASPoint_SetScanDirection,liblas),LASError,(LASPoint,UInt16),hPoint,value)
 end
 
 function flightline_edge(hPoint::LASPoint)
-    ccall((:LASPoint_GetFlightLineEdge,liblas),Uint16,(LASPoint,),hPoint)
+    ccall((:LASPoint_GetFlightLineEdge,liblas),UInt16,(LASPoint,),hPoint)
 end
 
-function flightline_edge!(hPoint::LASPoint,value::Uint16)
-    ccall((:LASPoint_SetFlightLineEdge,liblas),LASError,(LASPoint,Uint16),hPoint,value)
+function flightline_edge!(hPoint::LASPoint,value::UInt16)
+    ccall((:LASPoint_SetFlightLineEdge,liblas),LASError,(LASPoint,UInt16),hPoint,value)
 end
 
 function scanflags(hPoint::LASPoint)
@@ -115,19 +115,19 @@ function gps_time!(hPoint::LASPoint,value::Cdouble)
 end
 
 function scan_angle_rank(hPoint::LASPoint)
-    ccall((:LASPoint_GetScanAngleRank,liblas),Uint8,(LASPoint,),hPoint)
+    ccall((:LASPoint_GetScanAngleRank,liblas),UInt8,(LASPoint,),hPoint)
 end
 
-function scan_angle_rank!(hPoint::LASPoint,value::Uint8)
-    ccall((:LASPoint_SetScanAngleRank,liblas),LASError,(LASPoint,Uint8),hPoint,value)
+function scan_angle_rank!(hPoint::LASPoint,value::UInt8)
+    ccall((:LASPoint_SetScanAngleRank,liblas),LASError,(LASPoint,UInt8),hPoint,value)
 end
 
 function pointsource_id(hPoint::LASPoint)
-    ccall((:LASPoint_GetPointSourceId,liblas),Uint16,(LASPoint,),hPoint)
+    ccall((:LASPoint_GetPointSourceId,liblas),UInt16,(LASPoint,),hPoint)
 end
 
-function pointsource_id!(hPoint::LASPoint,value::Uint16)
-    ccall((:LASPoint_SetPointSourceId,liblas),LASError,(LASPoint,Uint16),hPoint,value)
+function pointsource_id!(hPoint::LASPoint,value::UInt16)
+    ccall((:LASPoint_SetPointSourceId,liblas),LASError,(LASPoint,UInt16),hPoint,value)
 end
 
 function userdata(hPoint::LASPoint)
@@ -171,7 +171,7 @@ function data!(hPoint::LASPoint,data::Ptr{Cuchar})
 end
 
 function xml(hPoint::LASPoint)
-    ccall((:LASPoint_GetXML,liblas),Ptr{Uint8},(LASPoint,),hPoint)
+    ccall((:LASPoint_GetXML,liblas),Ptr{UInt8},(LASPoint,),hPoint)
 end
 
 function color(hPoint::LASPoint)

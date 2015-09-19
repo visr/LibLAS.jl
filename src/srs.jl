@@ -13,41 +13,41 @@ function gtif!(hSRS::LASSRS,pgtiff::Ptr{Void},ptiff::Ptr{Void})
 end
 
 function wkt(hSRS::LASSRS)
-    ccall((:LASSRS_GetWKT,liblas),Ptr{Uint8},(LASSRS,),hSRS)
+    ccall((:LASSRS_GetWKT,liblas),Ptr{UInt8},(LASSRS,),hSRS)
 end
 
 function wkt_compound_ok(hSRS::LASSRS)
-    ccall((:LASSRS_GetWKT_CompoundOK,liblas),Ptr{Uint8},(LASSRS,),hSRS)
+    ccall((:LASSRS_GetWKT_CompoundOK,liblas),Ptr{UInt8},(LASSRS,),hSRS)
 end
 
-function wkt!(hSRS::LASSRS,value::Ptr{Uint8})
-    ccall((:LASSRS_SetWKT,liblas),LASError,(LASSRS,Ptr{Uint8}),hSRS,value)
+function wkt!(hSRS::LASSRS,value::Ptr{UInt8})
+    ccall((:LASSRS_SetWKT,liblas),LASError,(LASSRS,Ptr{UInt8}),hSRS,value)
 end
 
-function from_userinput!(hSRS::LASSRS,value::Ptr{Uint8})
-    ccall((:LASSRS_SetFromUserInput,liblas),LASError,(LASSRS,Ptr{Uint8}),hSRS,value)
+function from_userinput!(hSRS::LASSRS,value::Ptr{UInt8})
+    ccall((:LASSRS_SetFromUserInput,liblas),LASError,(LASSRS,Ptr{UInt8}),hSRS,value)
 end
 
 function proj4(hSRS::LASSRS)
-    ccall((:LASSRS_GetProj4,liblas),Ptr{Uint8},(LASSRS,),hSRS)
+    ccall((:LASSRS_GetProj4,liblas),Ptr{UInt8},(LASSRS,),hSRS)
 end
 
-function proj4!(hSRS::LASSRS,value::Ptr{Uint8})
-    ccall((:LASSRS_SetProj4,liblas),LASError,(LASSRS,Ptr{Uint8}),hSRS,value)
+function proj4!(hSRS::LASSRS,value::Ptr{UInt8})
+    ccall((:LASSRS_SetProj4,liblas),LASError,(LASSRS,Ptr{UInt8}),hSRS,value)
 end
 
-function vertical_cs!(hSRS::LASSRS,verticalCSType::Cint,citation::Ptr{Uint8},verticalDatum::Cint,verticalUnits::Cint)
-    ccall((:LASSRS_SetVerticalCS,liblas),LASError,(LASSRS,Cint,Ptr{Uint8},Cint,Cint),hSRS,verticalCSType,citation,verticalDatum,verticalUnits)
+function vertical_cs!(hSRS::LASSRS,verticalCSType::Cint,citation::Ptr{UInt8},verticalDatum::Cint,verticalUnits::Cint)
+    ccall((:LASSRS_SetVerticalCS,liblas),LASError,(LASSRS,Cint,Ptr{UInt8},Cint,Cint),hSRS,verticalCSType,citation,verticalDatum,verticalUnits)
 end
 
 function destroy(hSRS::LASSRS)
     ccall((:LASSRS_Destroy,liblas),Void,(LASSRS,),hSRS)
 end
 
-function vlr(hSRS::LASSRS,i::Uint32)
-    ccall((:LASSRS_GetVLR,liblas),LASVLR,(LASSRS,Uint32),hSRS,i)
+function vlr(hSRS::LASSRS,i::UInt32)
+    ccall((:LASSRS_GetVLR,liblas),LASVLR,(LASSRS,UInt32),hSRS,i)
 end
 
 function vlrcount(hSRS::LASSRS)
-    ccall((:LASSRS_GetVLRCount,liblas),Uint32,(LASSRS,),hSRS)
+    ccall((:LASSRS_GetVLRCount,liblas),UInt32,(LASSRS,),hSRS)
 end

@@ -1,10 +1,10 @@
 
-function create(::Type{LASReader},filename::String)
-    ccall((:LASReader_Create,liblas),LASReader,(Ptr{Uint8},),filename)
+function create(::Type{LASReader},filename::AbstractString)
+    ccall((:LASReader_Create,liblas),LASReader,(Ptr{UInt8},),filename)
 end
 
-function create(::Type{LASReader},filename::String,hHeader::LASHeader)
-    ccall((:LASReader_CreateWithHeader,liblas),LASReader,(Ptr{Uint8},LASHeader),filename,hHeader)
+function create(::Type{LASReader},filename::AbstractString,hHeader::LASHeader)
+    ccall((:LASReader_CreateWithHeader,liblas),LASReader,(Ptr{UInt8},LASHeader),filename,hHeader)
 end
 
 function nextpoint(hReader::LASReader)
@@ -12,7 +12,7 @@ function nextpoint(hReader::LASReader)
 end
 
 function point_at(hReader::LASReader,position::Int)
-    ccall((:LASReader_GetPointAt,liblas),LASPoint,(LASReader,Uint32),hReader,position)
+    ccall((:LASReader_GetPointAt,liblas),LASPoint,(LASReader,UInt32),hReader,position)
 end
 
 function destroy(hReader::LASReader)
@@ -40,9 +40,9 @@ function output_srs!(hReader::LASReader,hSRS::LASSRS)
 end
 
 function seek(hReader::LASReader,position::Int)
-    ccall((:LASReader_Seek,liblas),LASError,(LASReader,Uint32),hReader,position)
+    ccall((:LASReader_Seek,liblas),LASError,(LASReader,UInt32),hReader,position)
 end
 
 function summary_xml(hReader::LASReader)
-    ccall((:LASReader_GetSummaryXML,liblas),Ptr{Uint8},(LASReader,),hReader)
+    ccall((:LASReader_GetSummaryXML,liblas),Ptr{UInt8},(LASReader,),hReader)
 end

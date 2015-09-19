@@ -12,23 +12,23 @@ function destroy(hHeader::LASHeader)
 end
 
 function filesignature(hHeader::LASHeader)
-    ccall((:LASHeader_GetFileSignature,liblas),Ptr{Uint8},(LASHeader,),hHeader)
+    ccall((:LASHeader_GetFileSignature,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
 function filesourceid(hHeader::LASHeader)
-    ccall((:LASHeader_GetFileSourceId,liblas),Uint16,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetFileSourceId,liblas),UInt16,(LASHeader,),hHeader)
 end
 
-function filesourceid!(hHeader::LASHeader,value::Uint16)
-    ccall((:LASHeader_SetFileSourceId,liblas),LASError,(LASHeader,Uint16),hHeader,value)
+function filesourceid!(hHeader::LASHeader,value::UInt16)
+    ccall((:LASHeader_SetFileSourceId,liblas),LASError,(LASHeader,UInt16),hHeader,value)
 end
 
 function projectid(hHeader::LASHeader)
-    ccall((:LASHeader_GetProjectId,liblas),Ptr{Uint8},(LASHeader,),hHeader)
+    ccall((:LASHeader_GetProjectId,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
-function projectid!(hHeader::LASHeader,value::Ptr{Uint8})
-    ccall((:LASHeader_SetProjectId,liblas),LASError,(LASHeader,Ptr{Uint8}),hHeader,value)
+function projectid!(hHeader::LASHeader,value::Ptr{UInt8})
+    ccall((:LASHeader_SetProjectId,liblas),LASError,(LASHeader,Ptr{UInt8}),hHeader,value)
 end
 
 function guid(hHeader::LASHeader)
@@ -56,75 +56,75 @@ function versionminor!(hHeader::LASHeader,value::Cuchar)
 end
 
 function systemid(hHeader::LASHeader)
-    ccall((:LASHeader_GetSystemId,liblas),Ptr{Uint8},(LASHeader,),hHeader)
+    ccall((:LASHeader_GetSystemId,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
-function systemid!(hHeader::LASHeader,value::Ptr{Uint8})
-    ccall((:LASHeader_SetSystemId,liblas),LASError,(LASHeader,Ptr{Uint8}),hHeader,value)
+function systemid!(hHeader::LASHeader,value::Ptr{UInt8})
+    ccall((:LASHeader_SetSystemId,liblas),LASError,(LASHeader,Ptr{UInt8}),hHeader,value)
 end
 
 function softwareid(hHeader::LASHeader)
-    ccall((:LASHeader_GetSoftwareId,liblas),Ptr{Uint8},(LASHeader,),hHeader)
+    ccall((:LASHeader_GetSoftwareId,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
-function softwareid!(hHeader::LASHeader,value::Ptr{Uint8})
-    ccall((:LASHeader_SetSoftwareId,liblas),LASError,(LASHeader,Ptr{Uint8}),hHeader,value)
+function softwareid!(hHeader::LASHeader,value::Ptr{UInt8})
+    ccall((:LASHeader_SetSoftwareId,liblas),LASError,(LASHeader,Ptr{UInt8}),hHeader,value)
 end
 
 function reserved(hHeader::LASHeader)
-    ccall((:LASHeader_GetReserved,liblas),Uint16,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetReserved,liblas),UInt16,(LASHeader,),hHeader)
 end
 
-function reserved!(hHeader::LASHeader,value::Uint16)
-    ccall((:LASHeader_SetReserved,liblas),LASError,(LASHeader,Uint16),hHeader,value)
+function reserved!(hHeader::LASHeader,value::UInt16)
+    ccall((:LASHeader_SetReserved,liblas),LASError,(LASHeader,UInt16),hHeader,value)
 end
 
 function creationdoy(hHeader::LASHeader)
-    ccall((:LASHeader_GetCreationDOY,liblas),Uint16,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetCreationDOY,liblas),UInt16,(LASHeader,),hHeader)
 end
 
-function creationdoy!(hHeader::LASHeader,value::Uint16)
-    ccall((:LASHeader_SetCreationDOY,liblas),LASError,(LASHeader,Uint16),hHeader,value)
+function creationdoy!(hHeader::LASHeader,value::UInt16)
+    ccall((:LASHeader_SetCreationDOY,liblas),LASError,(LASHeader,UInt16),hHeader,value)
 end
 
 function creationyear(hHeader::LASHeader)
-    ccall((:LASHeader_GetCreationYear,liblas),Uint16,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetCreationYear,liblas),UInt16,(LASHeader,),hHeader)
 end
 
-function creationyear!(hHeader::LASHeader,value::Uint16)
-    ccall((:LASHeader_SetCreationYear,liblas),LASError,(LASHeader,Uint16),hHeader,value)
+function creationyear!(hHeader::LASHeader,value::UInt16)
+    ccall((:LASHeader_SetCreationYear,liblas),LASError,(LASHeader,UInt16),hHeader,value)
 end
 
 function headersize(hHeader::LASHeader)
-    ccall((:LASHeader_GetHeaderSize,liblas),Uint16,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetHeaderSize,liblas),UInt16,(LASHeader,),hHeader)
 end
 
 function dataoffset(hHeader::LASHeader)
-    ccall((:LASHeader_GetDataOffset,liblas),Uint32,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetDataOffset,liblas),UInt32,(LASHeader,),hHeader)
 end
 
-function dataoffset!(hHeader::LASHeader,value::Uint32)
-    ccall((:LASHeader_SetDataOffset,liblas),LASError,(LASHeader,Uint32),hHeader,value)
+function dataoffset!(hHeader::LASHeader,value::UInt32)
+    ccall((:LASHeader_SetDataOffset,liblas),LASError,(LASHeader,UInt32),hHeader,value)
 end
 
 function headerpadding(hHeader::LASHeader)
-    ccall((:LASHeader_GetHeaderPadding,liblas),Uint32,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetHeaderPadding,liblas),UInt32,(LASHeader,),hHeader)
 end
 
-function headerpadding!(hHeader::LASHeader,value::Uint32)
-    ccall((:LASHeader_SetHeaderPadding,liblas),LASError,(LASHeader,Uint32),hHeader,value)
+function headerpadding!(hHeader::LASHeader,value::UInt32)
+    ccall((:LASHeader_SetHeaderPadding,liblas),LASError,(LASHeader,UInt32),hHeader,value)
 end
 
 function recordscount(hHeader::LASHeader)
-    ccall((:LASHeader_GetRecordsCount,liblas),Uint32,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetRecordsCount,liblas),UInt32,(LASHeader,),hHeader)
 end
 
 function datarecordlength(hHeader::LASHeader)
-    ccall((:LASHeader_GetDataRecordLength,liblas),Uint16,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetDataRecordLength,liblas),UInt16,(LASHeader,),hHeader)
 end
 
-function datarecordlength!(hHeader::LASHeader,value::Uint16)
-    ccall((:LASHeader_SetDataRecordLength,liblas),LASError,(LASHeader,Uint16),hHeader,value)
+function datarecordlength!(hHeader::LASHeader,value::UInt16)
+    ccall((:LASHeader_SetDataRecordLength,liblas),LASError,(LASHeader,UInt16),hHeader,value)
 end
 
 function dataformatid(hHeader::LASHeader)
@@ -136,19 +136,19 @@ function dataformatid!(hHeader::LASHeader,value::Cuchar)
 end
 
 function pointrecordscount(hHeader::LASHeader)
-    ccall((:LASHeader_GetPointRecordsCount,liblas),Uint32,(LASHeader,),hHeader)
+    ccall((:LASHeader_GetPointRecordsCount,liblas),UInt32,(LASHeader,),hHeader)
 end
 
-function pointrecordscount!(hHeader::LASHeader,value::Uint32)
-    ccall((:LASHeader_SetPointRecordsCount,liblas),LASError,(LASHeader,Uint32),hHeader,value)
+function pointrecordscount!(hHeader::LASHeader,value::UInt32)
+    ccall((:LASHeader_SetPointRecordsCount,liblas),LASError,(LASHeader,UInt32),hHeader,value)
 end
 
 function pointrecordsbyreturncount(hHeader::LASHeader,index::Cint)
-    ccall((:LASHeader_GetPointRecordsByReturnCount,liblas),Uint32,(LASHeader,Cint),hHeader,index)
+    ccall((:LASHeader_GetPointRecordsByReturnCount,liblas),UInt32,(LASHeader,Cint),hHeader,index)
 end
 
-function pointrecordsbyreturncount!(hHeader::LASHeader,index::Cint,value::Uint32)
-    ccall((:LASHeader_SetPointRecordsByReturnCount,liblas),LASError,(LASHeader,Cint,Uint32),hHeader,index,value)
+function pointrecordsbyreturncount!(hHeader::LASHeader,index::Cint,value::UInt32)
+    ccall((:LASHeader_SetPointRecordsByReturnCount,liblas),LASError,(LASHeader,Cint,UInt32),hHeader,index,value)
 end
 
 function scale_x(hHeader::LASHeader)
@@ -215,12 +215,12 @@ function max!(hHeader::LASHeader,x::Cdouble,y::Cdouble,z::Cdouble)
     ccall((:LASHeader_SetMax,liblas),LASError,(LASHeader,Cdouble,Cdouble,Cdouble),hHeader,x,y,z)
 end
 
-function vlr(hHeader::LASHeader,i::Uint32)
-    ccall((:LASHeader_GetVLR,liblas),LASVLR,(LASHeader,Uint32),hHeader,i)
+function vlr(hHeader::LASHeader,i::UInt32)
+    ccall((:LASHeader_GetVLR,liblas),LASVLR,(LASHeader,UInt32),hHeader,i)
 end
 
-function deletevlr(hHeader::LASHeader,index::Uint32)
-    ccall((:LASHeader_DeleteVLR,liblas),LASError,(LASHeader,Uint32),hHeader,index)
+function deletevlr(hHeader::LASHeader,index::UInt32)
+    ccall((:LASHeader_DeleteVLR,liblas),LASError,(LASHeader,UInt32),hHeader,index)
 end
 
 function addvlr(hHeader::LASHeader,hVLR::LASVLR)
@@ -228,7 +228,7 @@ function addvlr(hHeader::LASHeader,hVLR::LASVLR)
 end
 
 function xml(hHeader::LASHeader)
-    ccall((:LASHeader_GetXML,liblas),Ptr{Uint8},(LASHeader,),hHeader)
+    ccall((:LASHeader_GetXML,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
 function schema(hHeader::LASHeader)
