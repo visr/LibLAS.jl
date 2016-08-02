@@ -2,6 +2,7 @@ __precompile__()
 
 module LibLAS
 
+using Compat
 import Base: copy, reset, print, isvalid, seek, convert, scale!
 
 include("exports.jl")

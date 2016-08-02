@@ -18,5 +18,5 @@ end
 
 function convert(::Type{AbstractString},hId::LASGuid)
     str = ccall((:LASGuid_AsString,liblas),Ptr{UInt8},(LASGuid,),hId)
-    bytestring(str)
+    unsafe_string(str)
 end
