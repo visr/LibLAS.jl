@@ -20,7 +20,7 @@ using LibLAS
 
 filename = "libLAS_1.2.las"
 
-reader = LibLAS.create(LASReader, filename)
+reader = LibLAS.create(LibLAS.LASReader, filename)
 header = LibLAS.lasheader(reader)
 
 n = LibLAS.pointrecordscount(header)
