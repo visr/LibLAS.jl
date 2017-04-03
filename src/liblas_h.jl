@@ -48,7 +48,7 @@ const LE_Fatal = UInt32(4)
 
 function liblas_version()
     version = ccall((:LAS_GetVersion,liblas),Ptr{UInt8},())
-    convert(VersionNumber, unsafe_string(version))
+    Base.convert(VersionNumber, unsafe_string(version))
 end
 
 function liblas_fullversion()
