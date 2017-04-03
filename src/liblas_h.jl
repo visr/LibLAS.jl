@@ -7,35 +7,35 @@ const liblas = "liblas_c"
 
 
 type LASWriterS end
-typealias LASWriter Ptr{LASWriterS}
+const LASWriter = Ptr{LASWriterS}
 
 type LASReaderS end
-typealias LASReader Ptr{LASReaderS}
+const LASReader = Ptr{LASReaderS}
 
 type LASPointS end
-typealias LASPoint Ptr{LASPointS}
+const LASPoint = Ptr{LASPointS}
 
 type LASHeaderS end
-typealias LASHeader Ptr{LASHeaderS}
+const LASHeader = Ptr{LASHeaderS}
 
 type LASGuidS end
-typealias LASGuid Ptr{LASGuidS}
+const LASGuid = Ptr{LASGuidS}
 
 type LASVLRS end
-typealias LASVLR Ptr{LASVLRS}
+const LASVLR = Ptr{LASVLRS}
 
 type LASColorS end
-typealias LASColor Ptr{LASColorS}
+const LASColor = Ptr{LASColorS}
 
 type LASSRSS end
-typealias LASSRS Ptr{LASSRSS}
+const LASSRS = Ptr{LASSRSS}
 
 type LASSchemaS end
-typealias LASSchema Ptr{LASSchemaS}
+const LASSchema = Ptr{LASSchemaS}
 
 
 # begin enum LASError
-typealias LASError UInt32
+const LASError = UInt32
 const LE_None = UInt32(0)
 const LE_Debug = UInt32(1)
 const LE_Warning = UInt32(2)
