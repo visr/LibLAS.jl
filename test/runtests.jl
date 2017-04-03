@@ -37,9 +37,9 @@ x_avg = x_sum / n
 y_avg = y_sum / n
 z_avg = z_sum / n
 
-@test_approx_eq x_avg 1442694.2739025319
-@test_approx_eq y_avg 377449.24373880465
-@test_approx_eq z_avg 861.60254888088491
+@test x_avg ≈ 1442694.2739025319
+@test y_avg ≈ 377449.24373880465
+@test z_avg ≈ 861.60254888088491
 
 # jumping to a specific point
 p = LibLAS.point_at(reader, 101)
