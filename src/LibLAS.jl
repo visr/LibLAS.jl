@@ -3,9 +3,7 @@ __precompile__()
 module LibLAS
 
 using Compat
-import Base: copy, reset, print, isvalid, seek, convert, scale!
 
-include("exports.jl")
 include("liblas_h.jl")
 include("reader.jl")
 include("header.jl")
