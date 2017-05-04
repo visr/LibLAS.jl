@@ -27,7 +27,7 @@ function projectid(hHeader::LASHeader)
     ccall((:LASHeader_GetProjectId,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
-function projectid!(hHeader::LASHeader,value::Ptr{UInt8})
+function projectid!(hHeader::LASHeader,value)
     ccall((:LASHeader_SetProjectId,liblas),LASError,(LASHeader,Ptr{UInt8}),hHeader,value)
 end
 
@@ -59,7 +59,7 @@ function systemid(hHeader::LASHeader)
     ccall((:LASHeader_GetSystemId,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
-function systemid!(hHeader::LASHeader,value::Ptr{UInt8})
+function systemid!(hHeader::LASHeader,value)
     ccall((:LASHeader_SetSystemId,liblas),LASError,(LASHeader,Ptr{UInt8}),hHeader,value)
 end
 
@@ -67,7 +67,7 @@ function softwareid(hHeader::LASHeader)
     ccall((:LASHeader_GetSoftwareId,liblas),Ptr{UInt8},(LASHeader,),hHeader)
 end
 
-function softwareid!(hHeader::LASHeader,value::Ptr{UInt8})
+function softwareid!(hHeader::LASHeader,value)
     ccall((:LASHeader_SetSoftwareId,liblas),LASError,(LASHeader,Ptr{UInt8}),hHeader,value)
 end
 
