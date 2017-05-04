@@ -123,10 +123,6 @@ function datarecordlength(hHeader::LASHeader)
     ccall((:LASHeader_GetDataRecordLength,liblas),UInt16,(LASHeader,),hHeader)
 end
 
-function datarecordlength!(hHeader::LASHeader,value::UInt16)
-    ccall((:LASHeader_SetDataRecordLength,liblas),LASError,(LASHeader,UInt16),hHeader,value)
-end
-
 function dataformatid(hHeader::LASHeader)
     ccall((:LASHeader_GetDataFormatId,liblas),Cuchar,(LASHeader,),hHeader)
 end
