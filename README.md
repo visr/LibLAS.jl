@@ -2,6 +2,8 @@
 
 Julia wrapper for [LibLAS](http://www.liblas.org/), a library for reading and writing the LAS LiDAR format.
 
+Note: Like LibLAS itself, this project is currently in hibernation or maintenance mode. For reading and writing LAS files in pure Julia, have a look at [`LasIO.jl`](https://github.com/visr/LasIO.jl/).
+
 [![Build Status](https://travis-ci.org/visr/LibLAS.jl.svg?branch=master)](https://travis-ci.org/visr/LibLAS.jl)
 
 ## Install
