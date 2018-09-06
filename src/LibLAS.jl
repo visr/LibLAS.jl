@@ -1,7 +1,5 @@
 module LibLAS
 
-using Compat
-
 include("liblas_h.jl")
 include("reader.jl")
 include("header.jl")
