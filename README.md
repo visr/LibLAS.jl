@@ -9,7 +9,7 @@ Note: Like LibLAS itself, this project is currently in hibernation or maintenanc
 ## Install
 
 ```julia
-Pkg.clone("https://github.com/visr/LibLAS.jl.git")
+pkg> add https://github.com/visr/LibLAS.jl
 ```
 
 You need to have the liblas_c shared library in your path, this is currently not added to the package.
@@ -20,34 +20,42 @@ See the [LibLAS website](http://www.liblas.org/download.html) for how to obtain 
 ```julia
 using LibLAS
 
-filename = "libLAS_1.2.las"
+# testfile downloaded from http://www.liblas.org/samples/
+filename = joinpath(dirname(pathof(LibLAS)), "..", "test", "libLAS_1.2.las")
 
 reader = LibLAS.create(LibLAS.LASReader, filename)
 header = LibLAS.lasheader(reader)
 
 n = LibLAS.pointrecordscount(header)
+
 bounds = [LibLAS.min_x(header), LibLAS.min_y(header), LibLAS.min_z(header),
           LibLAS.max_x(header), LibLAS.max_y(header), LibLAS.max_z(header)]
 
-x_sum = 0.0
-y_sum = 0.0
-z_sum = 0.0
+function mean_coordinates(header, reader)
+    n = LibLAS.pointrecordscount(header)
+    x_sum = 0.0
+    y_sum = 0.0
+    z_sum = 0.0
 
-# looping over all points to find the centroid of the point cloud
-for i = 1:n
-    p = LibLAS.nextpoint(reader)
-    x = LibLAS.xcoord(p)
-    y = LibLAS.ycoord(p)
-    z = LibLAS.zcoord(p)
+    # looping over all points
+    for i = 1:n
+        p = LibLAS.nextpoint(reader)
+        x = LibLAS.xcoord(p)
+        y = LibLAS.ycoord(p)
+        z = LibLAS.zcoord(p)
 
-    x_sum += x
-    y_sum += y
-    z_sum += z
+        x_sum += x
+        y_sum += y
+        z_sum += z
+    end
+
+    x_avg = x_sum / n
+    y_avg = y_sum / n
+    z_avg = z_sum / n
+    x_avg, y_avg, z_avg
 end
 
-x_avg = x_sum / n
-y_avg = y_sum / n
-z_avg = z_sum / n
+x_avg, y_avg, z_avg = mean_coordinates(header, reader)
 
 # jumping to a specific point
 p = LibLAS.point_at(reader, 101)
