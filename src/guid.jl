@@ -9,7 +9,7 @@ function create(::Type{LASGuid}, string::AbstractString)
 end
 
 function destroy(hId::LASGuid)
-    ccall((:LASGuid_Destroy,liblas),Void,(LASGuid,),hId)
+    ccall((:LASGuid_Destroy,liblas),Cvoid,(LASGuid,),hId)
 end
 
 function equals(hId1::LASGuid,hId2::LASGuid)

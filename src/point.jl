@@ -151,7 +151,7 @@ function copy(hPoint::LASPoint)
 end
 
 function destroy(hPoint::LASPoint)
-    ccall((:LASPoint_Destroy,liblas),Void,(LASPoint,),hPoint)
+    ccall((:LASPoint_Destroy,liblas),Cvoid,(LASPoint,),hPoint)
 end
 
 function lasheader(hPoint::LASPoint)
@@ -159,7 +159,7 @@ function lasheader(hPoint::LASPoint)
 end
 
 function lasheader!(hPoint::LASPoint,hHeader::LASHeader)
-    ccall((:LASPoint_SetHeader,liblas),Void,(LASPoint,LASHeader),hPoint,hHeader)
+    ccall((:LASPoint_SetHeader,liblas),Cvoid,(LASPoint,LASHeader),hPoint,hHeader)
 end
 
 function data(hPoint::LASPoint,data::Ptr{Cuchar})

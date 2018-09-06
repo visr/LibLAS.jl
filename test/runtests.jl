@@ -1,5 +1,5 @@
 using LibLAS
-using Base.Test
+using Test
 
 info("Using LibLAS version $(LibLAS.liblas_version())")
 

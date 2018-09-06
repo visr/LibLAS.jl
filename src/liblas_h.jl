@@ -6,31 +6,31 @@
 const liblas = "liblas_c"
 
 
-type LASWriterS end
+mutable struct LASWriterS end
 const LASWriter = Ptr{LASWriterS}
 
-type LASReaderS end
+mutable struct LASReaderS end
 const LASReader = Ptr{LASReaderS}
 
-type LASPointS end
+mutable struct LASPointS end
 const LASPoint = Ptr{LASPointS}
 
-type LASHeaderS end
+mutable struct LASHeaderS end
 const LASHeader = Ptr{LASHeaderS}
 
-type LASGuidS end
+mutable struct LASGuidS end
 const LASGuid = Ptr{LASGuidS}
 
-type LASVLRS end
+mutable struct LASVLRS end
 const LASVLR = Ptr{LASVLRS}
 
-type LASColorS end
+mutable struct LASColorS end
 const LASColor = Ptr{LASColorS}
 
-type LASSRSS end
+mutable struct LASSRSS end
 const LASSRS = Ptr{LASSRSS}
 
-type LASSchemaS end
+mutable struct LASSchemaS end
 const LASSchema = Ptr{LASSchemaS}
 
 
@@ -71,7 +71,7 @@ end
 # LASString
 
 function lasstring_free(string::Ptr{UInt8})
-    ccall((:LASString_Free,liblas),Void,(Ptr{UInt8},),string)
+    ccall((:LASString_Free,liblas),Cvoid,(Ptr{UInt8},),string)
 end
 
 # LASSchema
@@ -85,5 +85,5 @@ function base_bytesize(hFormat::LASSchema)
 end
 
 function destroy(hFormat::LASSchema)
-    ccall((:LASSchema_Destroy,liblas),Void,(LASSchema,),hFormat)
+    ccall((:LASSchema_Destroy,liblas),Cvoid,(LASSchema,),hFormat)
 end

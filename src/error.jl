@@ -1,9 +1,9 @@
 function reset(::Type{LASError})
-    ccall((:LASError_Reset,liblas),Void,())
+    ccall((:LASError_Reset,liblas),Cvoid,())
 end
 
 function pop(::Type{LASError})
-    ccall((:LASError_Pop,liblas),Void,())
+    ccall((:LASError_Pop,liblas),Cvoid,())
 end
 
 function last_error_num(::Type{LASError})
@@ -23,5 +23,5 @@ function errorcount(::Type{LASError})
 end
 
 function print(::Type{LASError},message::Ptr{UInt8})
-    ccall((:LASError_Print,liblas),Void,(Ptr{UInt8},),message)
+    ccall((:LASError_Print,liblas),Cvoid,(Ptr{UInt8},),message)
 end
