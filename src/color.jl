@@ -3,7 +3,7 @@ function create(::Type{LASColor})
 end
 
 function destroy(hColor::LASColor)
-    ccall((:LASColor_Destroy,liblas),Void,(LASColor,),hColor)
+    ccall((:LASColor_Destroy,liblas),Cvoid,(LASColor,),hColor)
 end
 
 function red(hColor::LASColor)

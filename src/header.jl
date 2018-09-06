@@ -8,7 +8,7 @@ function copy(hHeader::LASHeader)
 end
 
 function destroy(hHeader::LASHeader)
-    ccall((:LASHeader_Destroy,liblas),Void,(LASHeader,),hHeader)
+    ccall((:LASHeader_Destroy,liblas),Cvoid,(LASHeader,),hHeader)
 end
 
 function filesignature(hHeader::LASHeader)

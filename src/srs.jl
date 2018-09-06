@@ -5,11 +5,11 @@ function create(::Type{LASSRS})
 end
 
 function gtif(hSRS::LASSRS)
-    ccall((:LASSRS_GetGTIF,liblas),Ptr{Void},(LASSRS,),hSRS)
+    ccall((:LASSRS_GetGTIF,liblas),Ptr{Cvoid},(LASSRS,),hSRS)
 end
 
-function gtif!(hSRS::LASSRS,pgtiff::Ptr{Void},ptiff::Ptr{Void})
-    ccall((:LASSRS_SetGTIF,liblas),LASError,(LASSRS,Ptr{Void},Ptr{Void}),hSRS,pgtiff,ptiff)
+function gtif!(hSRS::LASSRS,pgtiff::Ptr{Cvoid},ptiff::Ptr{Cvoid})
+    ccall((:LASSRS_SetGTIF,liblas),LASError,(LASSRS,Ptr{Cvoid},Ptr{Cvoid}),hSRS,pgtiff,ptiff)
 end
 
 function wkt(hSRS::LASSRS)
@@ -41,7 +41,7 @@ function vertical_cs!(hSRS::LASSRS,verticalCSType::Cint,citation::Ptr{UInt8},ver
 end
 
 function destroy(hSRS::LASSRS)
-    ccall((:LASSRS_Destroy,liblas),Void,(LASSRS,),hSRS)
+    ccall((:LASSRS_Destroy,liblas),Cvoid,(LASSRS,),hSRS)
 end
 
 function vlr(hSRS::LASSRS,i::UInt32)

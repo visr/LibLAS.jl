@@ -15,7 +15,7 @@ function write_owned_header(hWriter::LASWriter)
 end
 
 function destroy(hWriter::LASWriter)
-    ccall((:LASWriter_Destroy,liblas),Void,(LASWriter,),hWriter)
+    ccall((:LASWriter_Destroy,liblas),Cvoid,(LASWriter,),hWriter)
 end
 
 function lasheader(hWriter::LASWriter)
@@ -23,7 +23,7 @@ function lasheader(hWriter::LASWriter)
 end
 
 function lasheader!(hWriter::LASWriter,hHeader::LASHeader)
-    ccall((:LASWriter_SetHeader,liblas),Void,(LASWriter,LASHeader),hWriter,hHeader)
+    ccall((:LASWriter_SetHeader,liblas),Cvoid,(LASWriter,LASHeader),hWriter,hHeader)
 end
 
 function srs!(hWriter::LASWriter,hSRS::LASSRS)

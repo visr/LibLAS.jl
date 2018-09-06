@@ -16,7 +16,7 @@ function point_at(hReader::LASReader,position::Int)
 end
 
 function destroy(hReader::LASReader)
-    ccall((:LASReader_Destroy,liblas),Void,(LASReader,),hReader)
+    ccall((:LASReader_Destroy,liblas),Cvoid,(LASReader,),hReader)
 end
 
 function lasheader(hReader::LASReader)
@@ -24,7 +24,7 @@ function lasheader(hReader::LASReader)
 end
 
 function lasheader!(hReader::LASReader,hHeader::LASHeader)
-    ccall((:LASReader_SetHeader,liblas),Void,(LASReader,LASHeader),hReader,hHeader)
+    ccall((:LASReader_SetHeader,liblas),Cvoid,(LASReader,LASHeader),hReader,hHeader)
 end
 
 function srs!(hReader::LASReader,hSRS::LASSRS)

@@ -5,7 +5,7 @@ function create(::Type{LASVLR})
 end
 
 function destroy(hVLR::LASVLR)
-    ccall((:LASVLR_Destroy,liblas),Void,(LASVLR,),hVLR)
+    ccall((:LASVLR_Destroy,liblas),Cvoid,(LASVLR,),hVLR)
 end
 
 function userid(hVLR::LASVLR)
