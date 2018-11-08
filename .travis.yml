@@ -11,7 +11,7 @@ notifications:
   email: false
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y liblas-bin
+  - sudo apt-get install -y liblas-bin liblas-c-dev liblas-dev
 # uncomment the following lines to override the default test script
 #script:
 #  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
